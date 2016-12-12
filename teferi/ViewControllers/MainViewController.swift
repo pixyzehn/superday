@@ -163,6 +163,15 @@ class MainViewController : UIViewController, MFMailComposeViewControllerDelegate
             make.height.equalTo(320)
             make.left.right.bottom.equalTo(self.view)
         }
+        
+        #if DEBUG
+            
+            DebugView.attach(toViewController: self,
+                             makeToggleButtonRelativeToView: self.contactButton,
+                             addDisposableTo: self.disposeBag!,
+                             editStateService: self.editStateService)
+            
+        #endif
     }
     
     override func viewWillDisappear(_ animated: Bool)

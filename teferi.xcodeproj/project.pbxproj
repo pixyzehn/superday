@@ -65,6 +65,8 @@
 		2482CAFD1DB12F9F00E892C1 /* OnboardingPage3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2482CAF81DB12F9F00E892C1 /* OnboardingPage3.swift */; };
 		2482CAFE1DB12F9F00E892C1 /* OnboardingPage4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2482CAF91DB12F9F00E892C1 /* OnboardingPage4.swift */; };
 		2482CAFF1DB12F9F00E892C1 /* OnboardingPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2482CAFA1DB12F9F00E892C1 /* OnboardingPager.swift */; };
+		249B374F1DFF45CF008595FD /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249B374E1DFF45CF008595FD /* DebugView.swift */; };
+		249B37511DFF45E0008595FD /* DebugView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 249B37501DFF45E0008595FD /* DebugView.xib */; };
 		24B03B591D9E4C3E00452D16 /* PagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B03B581D9E4C3E00452D16 /* PagerViewModel.swift */; };
 		24B03B5B1D9E4D1100452D16 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B03B5A1D9E4D1100452D16 /* SettingsService.swift */; };
 		24B03B5D1D9E4DA300452D16 /* DefaultSettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B03B5C1D9E4DA300452D16 /* DefaultSettingsService.swift */; };
@@ -223,6 +225,8 @@
 		2482CAF81DB12F9F00E892C1 /* OnboardingPage3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingPage3.swift; path = Onboarding/OnboardingPage3.swift; sourceTree = "<group>"; };
 		2482CAF91DB12F9F00E892C1 /* OnboardingPage4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingPage4.swift; path = Onboarding/OnboardingPage4.swift; sourceTree = "<group>"; };
 		2482CAFA1DB12F9F00E892C1 /* OnboardingPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingPager.swift; path = Onboarding/OnboardingPager.swift; sourceTree = "<group>"; };
+		249B374E1DFF45CF008595FD /* DebugView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DebugView.swift; path = Views/DebugView.swift; sourceTree = "<group>"; };
+		249B37501DFF45E0008595FD /* DebugView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DebugView.xib; path = Views/DebugView.xib; sourceTree = "<group>"; };
 		24A21B661D7C3E0800CEB4F3 /* teferiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = teferiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A21B6A1D7C3E0800CEB4F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24B03B581D9E4C3E00452D16 /* PagerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PagerViewModel.swift; path = ViewModels/PagerViewModel.swift; sourceTree = "<group>"; };
@@ -543,6 +547,8 @@
 				2420A8651DB56B5500C0478C /* EmptyStateView.swift */,
 				2420A8671DB56B6800C0478C /* EmptyStateView.xib */,
 				2407A9871D9D512D00066889 /* LaunchAnimationView.swift */,
+				249B374E1DFF45CF008595FD /* DebugView.swift */,
+				249B37501DFF45E0008595FD /* DebugView.xib */,
 				2420A86B1DB7BE6900C0478C /* PermissionView.swift */,
 				2420A86D1DB7DD0F00C0478C /* PermissionView.xib */,
 				24564F531D83254E00D9A8AE /* TimelineCell.swift */,
@@ -884,6 +890,7 @@
 				240AC71D1D748C8800F21F4F /* Main.storyboard in Resources */,
 				2420A8681DB56B6800C0478C /* EmptyStateView.xib in Resources */,
 				513535D31DA26E3B00A365A9 /* Onboarding.storyboard in Resources */,
+				249B37511DFF45E0008595FD /* DebugView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1235,6 +1242,7 @@
 				2421F8C51D9BB4C600AF8857 /* SwiftyBeaverLoggingService.swift in Sources */,
 				24564F5E1D8325CC00D9A8AE /* Category.swift in Sources */,
 				24EB96831DE709790040C211 /* DelayedSequence.swift in Sources */,
+				249B374F1DFF45CF008595FD /* DebugView.swift in Sources */,
 				24C72AAA1D90731C00DABAC3 /* LoggingService.swift in Sources */,
 				512A9B431DD49AD200B73F01 /* TimeSlotChangeType.swift in Sources */,
 				24564F601D8325CC00D9A8AE /* TimeSlot.swift in Sources */,
