@@ -5,9 +5,6 @@ import RxSwift
 class MainViewModel
 {
     // MARK: Fields
-    private let superday = "Superday"
-    private let superyesterday = "Superyesterday"
-    
     private let metricsService : MetricsService
     private let feedbackService: FeedbackService
     private let timeSlotService : TimeSlotService
@@ -64,11 +61,11 @@ class MainViewModel
         
         if currentDate.ignoreTimeComponents() == today
         {
-            return superday.translate()
+            return L10n.superday.string
         }
         else if currentDate.ignoreTimeComponents() == yesterday
         {
-            return superyesterday.translate()
+            return L10n.superyesterday.string
         }
         
         let dayOfMonthFormatter = DateFormatter();

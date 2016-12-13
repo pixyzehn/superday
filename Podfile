@@ -11,6 +11,7 @@ target 'teferi' do
     pod 'SnapKit', '~> 3.0'
     pod 'Fabric'
     pod 'Crashlytics'
+    pod 'SwiftGen'
 
   target 'teferiTests' do
     inherit! :search_paths

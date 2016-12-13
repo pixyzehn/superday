@@ -113,8 +113,8 @@ class AppDelegate : UIResponder, UIApplicationDelegate
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainViewController = storyboard.instantiateViewController(withIdentifier: "Main") as! MainViewController
+        let mainViewController = StoryboardScene.Main.instantiateMain()
+        
         var initialViewController : UIViewController =
             mainViewController.inject(self.metricsService,
                                       self.appStateService,
@@ -127,14 +127,13 @@ class AppDelegate : UIResponder, UIApplicationDelegate
         
         if self.settingsService.installDate == nil
         {
-            let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
-            let onboardController = storyboard.instantiateViewController(withIdentifier: "OnboardingPager") as! OnboardingPageViewController
-            
             initialViewController =
-                onboardController.inject(self.settingsService,
-                                         self.appStateService,
-                                         mainViewController,
-                                         notificationService)
+                StoryboardScene.Onboarding
+                    .instantiateOnboardingPager()
+                    .inject(self.settingsService,
+                            self.appStateService,
+                            mainViewController,
+                            notificationService)
             
             mainViewController.setIsFirstUse()
         }

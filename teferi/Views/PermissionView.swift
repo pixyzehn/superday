@@ -14,12 +14,12 @@ class PermissionView : UIView
     
     private var titleText : String
     {
-        return (self.isFirstTimeUser ? titleFirstUseKey : titleKey).translate()
+        return (self.isFirstTimeUser ? L10n.locationDisabledTitleFirstUse : L10n.locationDisabledTitle).string
     }
     
     private var descriptionText : String
     {
-        return (self.isFirstTimeUser ? descriptionFirstUseKey : descriptionKey).translate()
+        return (self.isFirstTimeUser ? L10n.locationDisabledDescriptionFirstUse : L10n.locationDisabledDescription).string
     }
     
     @IBOutlet private weak var blur : UIView!

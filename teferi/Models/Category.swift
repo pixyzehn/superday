@@ -47,17 +47,17 @@ enum Category : String
         switch(self)
         {
         case .friends:
-            return "icFriends"
+            return Asset.IcFriends.rawValue
         case .work:
-            return "icWork"
+            return Asset.IcWork.rawValue
         case .leisure:
-            return "icLeisure"
+            return Asset.IcLeisure.rawValue
         case .commute:
-            return "icCommute"
+            return Asset.IcCommute.rawValue
         case .food:
-            return "icFood"
+            return Asset.IcFood.rawValue
         case .unknown:
-            return "icCancel"
+            return Asset.IcCancel.rawValue
         }
     }
 }
