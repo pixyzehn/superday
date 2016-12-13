@@ -1005,7 +1005,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\n\n$PODS_ROOT/SwiftGen/bin/swiftgen images $PROJECT_DIR/teferi/Assets.xcassets -o \"$PROJECT_DIR/teferi/Generated/Images.swift\"\n\n$PODS_ROOT/SwiftGen/bin/swiftgen storyboards \"$PROJECT_DIR/teferi/\" -t swift3 -o \"$PROJECT_DIR/teferi/Generated/Storyboards.swift\"\n\n$PODS_ROOT/SwiftGen/bin/swiftgen strings -t swift3 \"$PROJECT_DIR/teferi/en.lproj/Localizable.strings\" -o \"$PROJECT_DIR/teferi/Generated/Strings.swift\"\n";
+			shellScript = "touch \"$PROJECT_DIR/teferi/Generated/Images.swift\"\ntouch \"$PROJECT_DIR/teferi/Generated/Storyboards.swift\"\ntouch \"$PROJECT_DIR/teferi/Generated/Strings.swift\"\n\n$PODS_ROOT/SwiftGen/bin/swiftgen images $PROJECT_DIR/teferi/Assets.xcassets -o \"$PROJECT_DIR/teferi/Generated/Images.swift\"\n\n$PODS_ROOT/SwiftGen/bin/swiftgen storyboards \"$PROJECT_DIR/teferi/\" -t swift3 -o \"$PROJECT_DIR/teferi/Generated/Storyboards.swift\"\n\n$PODS_ROOT/SwiftGen/bin/swiftgen strings -t swift3 \"$PROJECT_DIR/teferi/en.lproj/Localizable.strings\" -o \"$PROJECT_DIR/teferi/Generated/Strings.swift\"\n";
 		};
 		24E0949C1DA823E70035EC19 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
