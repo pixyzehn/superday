@@ -6,6 +6,7 @@ class PagerViewController : UIPageViewController, UIPageViewControllerDataSource
     // MARK: Fields
     private let disposeBag = DisposeBag()
     
+    private var timeService : TimeService!
     private var metricsService : MetricsService!
     private var appStateService : AppStateService!
     private var settingsService : SettingsService!
@@ -37,19 +38,22 @@ class PagerViewController : UIPageViewController, UIPageViewControllerDataSource
     
     // MARK: UIViewController lifecycle
     
-    func inject(_ metricsService: MetricsService,
+    func inject(_ timeService: TimeService,
+                _ metricsService: MetricsService,
                 _ appStateService: AppStateService,
                 _ settingsService: SettingsService,
                 _ timeSlotService: TimeSlotService,
                 _ editStateService: EditStateService)
     {
+        self.timeService = timeService
         self.metricsService = metricsService
         self.appStateService = appStateService
         self.settingsService = settingsService
         self.timeSlotService = timeSlotService
         self.editStateService = editStateService
         
-        self.viewModel = PagerViewModel(settingsService: settingsService)
+        self.viewModel = PagerViewModel(timeService: timeService,
+                                        settingsService: settingsService)
         
         self.createBindings()
     }
@@ -90,7 +94,8 @@ class PagerViewController : UIPageViewController, UIPageViewControllerDataSource
     private func initCurrentDateViewController()
     {
         self.currentDateViewController =
-            TimelineViewController(date: Date(),
+            TimelineViewController(date: self.timeService.now,
+                                   timeService: self.timeService,
                                    metricsService: self.metricsService,
                                    appStateService: self.appStateService,
                                    timeSlotService: self.timeSlotService,
@@ -116,7 +121,7 @@ class PagerViewController : UIPageViewController, UIPageViewControllerDataSource
         switch appState
         {
             case .active:
-                let today = Date().ignoreTimeComponents()
+                let today = self.timeService.now.ignoreTimeComponents()
                 
                 guard let inactiveDate = self.settingsService.lastInactiveDate, today > inactiveDate.ignoreTimeComponents() else { return }
                 
@@ -142,7 +147,7 @@ class PagerViewController : UIPageViewController, UIPageViewControllerDataSource
         
         let timelineController = self.viewControllers!.first as! TimelineViewController
         
-        if timelineController.date.ignoreTimeComponents() == Date().ignoreTimeComponents()
+        if timelineController.date.ignoreTimeComponents() == self.timeService.now.ignoreTimeComponents()
         {
             self.currentDateViewController = timelineController
         }
@@ -159,6 +164,7 @@ class PagerViewController : UIPageViewController, UIPageViewControllerDataSource
         guard self.viewModel.canScroll(toDate: nextDate) else { return nil }
         
         return TimelineViewController(date: nextDate,
+                                      timeService: self.timeService,
                                       metricsService: self.metricsService,
                                       appStateService: self.appStateService,
                                       timeSlotService: self.timeSlotService,
@@ -173,6 +179,7 @@ class PagerViewController : UIPageViewController, UIPageViewControllerDataSource
         guard self.viewModel.canScroll(toDate: nextDate) else { return nil }
         
         return TimelineViewController(date: nextDate,
+                                      timeService: self.timeService,
                                       metricsService: self.metricsService,
                                       appStateService: self.appStateService,
                                       timeSlotService: self.timeSlotService,

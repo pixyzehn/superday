@@ -8,6 +8,7 @@ class MainViewModel
     private let superday = "Superday"
     private let superyesterday = "Superyesterday"
     
+    private let timeService : TimeService
     private let metricsService : MetricsService
     private let feedbackService: FeedbackService
     private let timeSlotService : TimeSlotService
@@ -16,7 +17,8 @@ class MainViewModel
     private let editStateService : EditStateService
     private let smartGuessService : SmartGuessService
     
-    init(metricsService: MetricsService,
+    init(timeService: TimeService,
+         metricsService: MetricsService,
          feedbackService: FeedbackService,
          settingsService: SettingsService,
          timeSlotService: TimeSlotService,
@@ -24,6 +26,7 @@ class MainViewModel
          editStateService: EditStateService,
          smartGuessService : SmartGuessService)
     {
+        self.timeService = timeService
         self.metricsService = metricsService
         self.feedbackService = feedbackService
         self.settingsService = settingsService
@@ -31,10 +34,12 @@ class MainViewModel
         self.locationService = locationService
         self.editStateService = editStateService
         self.smartGuessService = smartGuessService
+        
+        self.currentDate = self.timeService.now
     }
     
     // MARK: Properties
-    var currentDate = Date()
+    var currentDate : Date
     
     var shouldShowLocationPermissionOverlay : Bool
     {
@@ -46,20 +51,20 @@ class MainViewModel
         let minimumRequestDate = lastRequestedDate.add(days: 1)
         
         //If we previously showed the overlay, we must only do it again after 24 hours
-        return minimumRequestDate < Date()
+        return minimumRequestDate < self.timeService.now
     }
     
     ///Current date for the calendar button
     var calendarDay : String
     {
-        let currentDay = Calendar.current.component(.day, from: Date())
+        let currentDay = Calendar.current.component(.day, from: self.timeService.now)
         return String(format: "%02d", currentDay)
     }
     
     ///Gets the title for the header. Changes on new locations.
     var title : String
     {
-        let today = Date().ignoreTimeComponents()
+        let today = self.timeService.now.ignoreTimeComponents()
         let yesterday = today.yesterday.ignoreTimeComponents()
         
         if currentDate.ignoreTimeComponents() == today
@@ -89,7 +94,7 @@ class MainViewModel
     {
         let currentLocation = self.locationService.getLastKnownLocation()
         
-        let newSlot = TimeSlot(withStartTime: Date(),
+        let newSlot = TimeSlot(withStartTime: self.timeService.now,
                                category: category,
                                location: currentLocation,
                                categoryWasSetByUser: true)

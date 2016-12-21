@@ -4,6 +4,7 @@ import Nimble
 
 class PagerViewControllerTests : XCTestCase
 {
+    private var timeService : TimeService!
     private var metricsService : MetricsService!
     private var appStateService : AppStateService!
     private var settingsService : SettingsService!
@@ -15,6 +16,7 @@ class PagerViewControllerTests : XCTestCase
     {
         super.setUp()
  
+        self.timeService = MockTimeService()
         self.metricsService = MockMetricsService()
         self.settingsService = MockSettingsService()
         self.appStateService = MockAppStateService()
@@ -22,7 +24,8 @@ class PagerViewControllerTests : XCTestCase
         self.editStateService = MockEditStateService()
         
         self.pagerViewController = PagerViewController(coder: NSCoder())!
-        self.pagerViewController.inject(self.metricsService,
+        self.pagerViewController.inject(self.timeService,
+                                        self.metricsService,
                                         self.appStateService,
                                         self.settingsService,
                                         self.timeSlotService,

@@ -11,6 +11,7 @@ class OnboardingPageViewController: UIPageViewController, UIPageViewControllerDa
     
     @IBOutlet var pager: OnboardingPager!
     
+    private var timeService : TimeService!
     private var settingsService : SettingsService!
     private var appStateService : AppStateService!
     private var mainViewController : MainViewController!
@@ -55,11 +56,13 @@ class OnboardingPageViewController: UIPageViewController, UIPageViewControllerDa
     }
     
     //MARK: Methods
-    func inject(_ settingsService: SettingsService,
+    func inject(_ timeService: TimeService,
+                _ settingsService: SettingsService,
                 _ appStateService: AppStateService,
                 _ mainViewController: MainViewController,
                 _ notificationService: NotificationService) -> OnboardingPageViewController
     {
+        self.timeService = timeService
         self.appStateService = appStateService
         self.settingsService = settingsService
         self.mainViewController = mainViewController
@@ -124,7 +127,7 @@ class OnboardingPageViewController: UIPageViewController, UIPageViewControllerDa
             .instantiateViewController(withIdentifier: "OnboardingScreen\(id)")
             as! OnboardingPage
         
-        page.inject(self.settingsService, self.appStateService, self.notificationService, self)
+        page.inject(self.timeService, self.settingsService, self.appStateService, self.notificationService, self)
         return page
     }
     

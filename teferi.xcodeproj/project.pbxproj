@@ -28,6 +28,9 @@
 		2421F8C31D9BACB500AF8857 /* ClosureGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421F8C21D9BACB500AF8857 /* ClosureGestureRecognizer.swift */; };
 		2421F8C51D9BB4C600AF8857 /* SwiftyBeaverLoggingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421F8C41D9BB4C600AF8857 /* SwiftyBeaverLoggingService.swift */; };
 		242FE7D61DE7689A00EAEEE3 /* AutoResizingLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242FE7D51DE7689A00EAEEE3 /* AutoResizingLayerView.swift */; };
+		243D1D7B1E0B152F00C66D84 /* DefaultTimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243D1D7A1E0B152F00C66D84 /* DefaultTimeService.swift */; };
+		243D1D7D1E0B155900C66D84 /* TimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243D1D7C1E0B155900C66D84 /* TimeService.swift */; };
+		243D1D7F1E0B1FAD00C66D84 /* MockTimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243D1D7E1E0B1FAD00C66D84 /* MockTimeService.swift */; };
 		243E37AE1DC8FABC0074032D /* PostiOSTenNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243E37AD1DC8FABC0074032D /* PostiOSTenNotificationService.swift */; };
 		24526A751D92D98800DA3FA0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24526A741D92D98800DA3FA0 /* Constants.swift */; };
 		24526A771D92D99F00DA3FA0 /* MetricsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24526A761D92D99F00DA3FA0 /* MetricsService.swift */; };
@@ -186,6 +189,9 @@
 		2421F8C21D9BACB500AF8857 /* ClosureGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClosureGestureRecognizer.swift; path = Helpers/ClosureGestureRecognizer.swift; sourceTree = "<group>"; };
 		2421F8C41D9BB4C600AF8857 /* SwiftyBeaverLoggingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyBeaverLoggingService.swift; path = Services/SwiftyBeaverLoggingService.swift; sourceTree = "<group>"; };
 		242FE7D51DE7689A00EAEEE3 /* AutoResizingLayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoResizingLayerView.swift; path = Views/AutoResizingLayerView.swift; sourceTree = "<group>"; };
+		243D1D7A1E0B152F00C66D84 /* DefaultTimeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultTimeService.swift; path = Services/DefaultTimeService.swift; sourceTree = "<group>"; };
+		243D1D7C1E0B155900C66D84 /* TimeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeService.swift; path = Services/Protocols/TimeService.swift; sourceTree = "<group>"; };
+		243D1D7E1E0B1FAD00C66D84 /* MockTimeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockTimeService.swift; path = Mocks/MockTimeService.swift; sourceTree = "<group>"; };
 		243E37AD1DC8FABC0074032D /* PostiOSTenNotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostiOSTenNotificationService.swift; path = Services/PostiOSTenNotificationService.swift; sourceTree = "<group>"; };
 		24526A741D92D98800DA3FA0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		24526A761D92D99F00DA3FA0 /* MetricsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MetricsService.swift; path = Services/Protocols/MetricsService.swift; sourceTree = "<group>"; };
@@ -347,12 +353,12 @@
 		240AC7161D748C8800F21F4F /* teferi */ = {
 			isa = PBXGroup;
 			children = (
-				51899C391DED953000633D82 /* Styles */,
 				24CD8A461D7A13560017C53E /* Extensions */,
 				2421F8C11D9BAC4A00AF8857 /* Helpers */,
 				24BA51A91D74D79C00042CDF /* Models */,
 				24BA51A51D74D69C00042CDF /* Services */,
 				24D99F681D74B92C00E68163 /* Storyboards */,
+				51899C391DED953000633D82 /* Styles */,
 				24D99F671D74B91900E68163 /* ViewControllers */,
 				24D99F661D74B8D700E68163 /* ViewModels */,
 				24D99F691D74B93C00E68163 /* Views */,
@@ -436,6 +442,7 @@
 				24B03B601D9E5DEE00452D16 /* MockSettingsService.swift */,
 				2FB611431DE785AB007C5646 /* MockFeedbackService.swift */,
 				24D18E271DF0251A0046B202 /* MockSmartGuessService.swift */,
+				243D1D7E1E0B1FAD00C66D84 /* MockTimeService.swift */,
 			);
 			name = Mocks;
 			sourceTree = "<group>";
@@ -636,8 +643,9 @@
 		24EB96661DE7079B0040C211 /* State */ = {
 			isa = PBXGroup;
 			children = (
-				24EB966D1DE7080F0040C211 /* EditStateService.swift */,
 				24D213AA1DB8CA4600E429CA /* AppStateService.swift */,
+				24EB966D1DE7080F0040C211 /* EditStateService.swift */,
+				243D1D7C1E0B155900C66D84 /* TimeService.swift */,
 			);
 			name = State;
 			sourceTree = "<group>";
@@ -657,6 +665,7 @@
 			children = (
 				24EB966A1DE7080F0040C211 /* DefaultEditStateService.swift */,
 				24D213AE1DB8CB8300E429CA /* DefaultAppStateService.swift */,
+				243D1D7A1E0B152F00C66D84 /* DefaultTimeService.swift */,
 			);
 			name = State;
 			sourceTree = "<group>";
@@ -825,7 +834,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Toggl;
 				TargetAttributes = {
 					240AC7131D748C8800F21F4F = {
@@ -1226,6 +1235,7 @@
 				24B03B5D1D9E4DA300452D16 /* DefaultSettingsService.swift in Sources */,
 				24564F511D8320FC00D9A8AE /* MainViewController.swift in Sources */,
 				24EB96731DE7080F0040C211 /* DefaultTimeSlotService.swift in Sources */,
+				243D1D7D1E0B155900C66D84 /* TimeService.swift in Sources */,
 				24526A751D92D98800DA3FA0 /* Constants.swift in Sources */,
 				24EB96721DE7080F0040C211 /* DefaultEditStateService.swift in Sources */,
 				24526A771D92D99F00DA3FA0 /* MetricsService.swift in Sources */,
@@ -1242,6 +1252,7 @@
 				513535D61DA2756C00A365A9 /* OnboardingPageViewController.swift in Sources */,
 				24EB96761DE7080F0040C211 /* TimeSlotService.swift in Sources */,
 				24D18E261DEF6D640046B202 /* SmartGuess.swift in Sources */,
+				243D1D7B1E0B152F00C66D84 /* DefaultTimeService.swift in Sources */,
 				2420A86A1DB6271000C0478C /* EditTimeSlotView.swift in Sources */,
 				24B03B651DA3864500452D16 /* AddTimeSlotView.swift in Sources */,
 				2421F8C31D9BACB500AF8857 /* ClosureGestureRecognizer.swift in Sources */,
@@ -1289,6 +1300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24564F701D83270000D9A8AE /* MockLocationService.swift in Sources */,
+				243D1D7F1E0B1FAD00C66D84 /* MockTimeService.swift in Sources */,
 				240575B91DC7F39E002C0C06 /* MockAppStateService.swift in Sources */,
 				24EB96871DE7163E0040C211 /* MockTimeSlotService.swift in Sources */,
 				240575BB1DC7F3F4002C0C06 /* MockEditStateService.swift in Sources */,
