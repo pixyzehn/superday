@@ -4,13 +4,13 @@ import MessageUI
 
 class MailFeedbackService: NSObject, FeedbackService, MFMailComposeViewControllerDelegate
 {
-    //MARK: Fields
+    // MARK: Fields
     private let recipients : [String]
     private let subject : String
     private let body : String
     private var completionHandler: () -> ()
     
-    //MARK: Properties
+    // MARK: Properties
     var logURL : URL?
     {
         let fileManager = FileManager.default

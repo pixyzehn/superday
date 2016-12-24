@@ -26,7 +26,7 @@ class TimelineCell : UITableViewCell
     @IBOutlet private weak var timeSlotDistanceConstraint : NSLayoutConstraint!
     private var lineFadeView : AutoResizingLayerView?
     
-    //MARK: Properties
+    // MARK: Properties
     private(set) var isSubscribedToClickObservable = false
     lazy var editClickObservable : Observable<(CGPoint, Int)> =
     {

@@ -18,7 +18,7 @@ class TimelineViewController : UITableViewController
     
     private lazy var footerCell : UITableViewCell = { return UITableViewCell(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 120)) }()
     
-    //MARK: Initializers
+    // MARK: Initializers
     init(date: Date,
          metricsService: MetricsService,
          appStateService: AppStateService,

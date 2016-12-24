@@ -3,7 +3,7 @@ import CoreLocation
 
 class DefaultSmartGuessService : SmartGuessService
 {
-    //MARK: Fields
+    // MARK: Fields
     private let smartGuessErrorThreshold = 3
     private let smartGuessIdKey = "smartGuessId"
     private let loggingService: LoggingService

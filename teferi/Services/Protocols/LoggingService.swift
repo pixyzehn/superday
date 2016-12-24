@@ -1,7 +1,7 @@
 ///Service that creates a log
 protocol LoggingService
 {
-    //MARK: Methods
+    // MARK: Methods
     
     /**
      Appends a message to the log file.

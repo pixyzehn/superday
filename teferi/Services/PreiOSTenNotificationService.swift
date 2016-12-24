@@ -4,19 +4,19 @@ import UIKit
 
 class PreiOSTenNotificationService : NotificationService
 {
-    //MARK: Fields
+    // MARK: Fields
     private let loggingService : LoggingService
     private var notificationSubscription : Disposable?
     private let notificationAuthorizationObservable : Observable<Bool>
     
-    //MARK: Initializers
+    // MARK: Initializers
     init(loggingService: LoggingService, _ notificationAuthorizationObservable: Observable<Bool>)
     {
         self.loggingService = loggingService
         self.notificationAuthorizationObservable = notificationAuthorizationObservable
     }
     
-    //MARK: NotificationService implementation
+    // MARK: NotificationService implementation
     func requestNotificationPermission(completed: @escaping () -> ())
     {
         let notificationSettings = UIUserNotificationSettings(types: [ .alert, .badge ], categories: nil)

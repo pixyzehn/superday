@@ -4,7 +4,7 @@ import CoreLocation
 
 class DefaultSettingsService : SettingsService
 {
-    //MARK: Fields
+    // MARK: Fields
     private let installDateKey = "installDate"
     private let lastLocationLatKey = "lastLocationLat"
     private let lastLocationLngKey = "lastLocationLng"
@@ -13,7 +13,7 @@ class DefaultSettingsService : SettingsService
     private let canIgnoreLocationPermissionKey = " canIgnoreLocationPermission"
     private let lastAskedForLocationPermissionKey = "lastAskedForLocationPermission"
     
-    //MARK: Properties
+    // MARK: Properties
     var installDate : Date?
     {
         return UserDefaults.standard.object(forKey: self.installDateKey) as! Date?
@@ -64,7 +64,7 @@ class DefaultSettingsService : SettingsService
         return UserDefaults.standard.bool(forKey: self.canIgnoreLocationPermissionKey)
     }
     
-    //MARK: Methods
+    // MARK: Methods
     func setInstallDate(_ date: Date)
     {
         guard self.installDate == nil else { return }

@@ -5,7 +5,7 @@ protocol PersistencyService
 {
     associatedtype T
     
-    //MARK: Methods
+    // MARK: Methods
     
     ///Returns the last saved instance of type T created.
     func getLast() -> T?

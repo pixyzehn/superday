@@ -5,7 +5,7 @@ import CoreGraphics
 
 class AddTimeSlotView : UIView
 {
-    //MARK: Fields
+    // MARK: Fields
     private let isAddingVariable = Variable(false)
     private var disposeBag : DisposeBag? = DisposeBag()
     
@@ -17,7 +17,7 @@ class AddTimeSlotView : UIView
     @IBOutlet private weak var friendsButton : UIButton!
     @IBOutlet private weak var commuteButton : UIButton!
 
-    //MARK: Properties
+    // MARK: Properties
     var isAdding : Bool
     {
         get { return self.isAddingVariable.value }
@@ -44,7 +44,7 @@ class AddTimeSlotView : UIView
         return Observable.from(taps).merge()
     }()
     
-    //MARK: Lifecycle methods
+    // MARK: Lifecycle methods
     override func awakeFromNib()
     {
         super.awakeFromNib()
@@ -94,7 +94,7 @@ class AddTimeSlotView : UIView
         return false
     }
     
-    //MARK: Methods
+    // MARK: Methods
     func close()
     {
         guard self.isAdding == true else { return }

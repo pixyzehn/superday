@@ -19,7 +19,7 @@ class DefaultTrackingService : TrackingService
     
     private var isOnBackground = false
     
-    //MARK: Init
+    // MARK: Init
     init(loggingService: LoggingService,
          settingsService: SettingsService,
          timeSlotService: TimeSlotService,
@@ -35,7 +35,7 @@ class DefaultTrackingService : TrackingService
         notificationService.subscribeToCategoryAction(self.onNotificationAction)
     }
     
-    //MARK:  TrackingService implementation
+    // MARK:  TrackingService implementation
     func onLocation(_ location: CLLocation)
     {
         guard self.isOnBackground else { return }

@@ -4,18 +4,18 @@ import UIKit
 ///Implementation that uses CoreData to persist information on disk.
 class CoreDataPersistencyService<T> : BasePersistencyService<T>
 {
-    //MARK: Fields
+    // MARK: Fields
     let loggingService : LoggingService
     let modelAdapter : CoreDataModelAdapter<T>
     
-    //MARK: Initializers
+    // MARK: Initializers
     init(loggingService: LoggingService, modelAdapter: CoreDataModelAdapter<T>)
     {
         self.modelAdapter = modelAdapter
         self.loggingService = loggingService
     }
     
-    //MARK: PersistencyService implementation
+    // MARK: PersistencyService implementation
     override func getLast() -> T?
     {
         guard let managedElement = self.getLastManagedElement() else { return nil }
@@ -124,7 +124,7 @@ class CoreDataPersistencyService<T> : BasePersistencyService<T>
         
     }
     
-    //MARK: Methods
+    // MARK: Methods
     private func getManagedObjectContext() -> NSManagedObjectContext
     {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

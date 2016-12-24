@@ -4,7 +4,7 @@ import RxSwift
 /// Responsible for tracking the users location.
 protocol LocationService
 {
-    //MARK: Methods
+    // MARK: Methods
     
     ///Starts the tracking service.
     func startLocationTracking()

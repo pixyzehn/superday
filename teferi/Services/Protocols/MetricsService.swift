@@ -3,7 +3,7 @@ import Foundation
 ///Provides metrics about the app's usage
 protocol MetricsService
 {
-    //MARK: Methods
+    // MARK: Methods
     
     ///Perform any framework specific initialization
     func initialize()

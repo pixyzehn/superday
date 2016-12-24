@@ -4,7 +4,7 @@ import Darwin
 
 extension String
 {
-    //MARK: Methods
+    // MARK: Methods
     
     /**
      Finds the localized string for the provided key in the main bundle and returns it.

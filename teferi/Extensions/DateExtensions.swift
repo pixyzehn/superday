@@ -2,7 +2,7 @@ import Foundation
 
 extension Date
 {
-    //MARK: Properties
+    // MARK: Properties
     
     ///Returns the day before the current date
     var yesterday : Date
@@ -16,7 +16,7 @@ extension Date
         return self.add(days: 1)
     }
     
-    //MARK: Methods
+    // MARK: Methods
     
     /**
      Add (or subtract, if the value is negative) days to this date.

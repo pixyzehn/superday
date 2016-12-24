@@ -4,7 +4,7 @@ import SnapKit
 
 class OnboardingPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate
 {
-    //MARK: Fields
+    // MARK: Fields
     internal lazy var pages : [OnboardingPage] = { return (1...4).map { i in self.page("\(i)") } } ()
     
     private var launchAnim : LaunchAnimationView!
@@ -16,7 +16,7 @@ class OnboardingPageViewController: UIPageViewController, UIPageViewControllerDa
     private var mainViewController : MainViewController!
     private var notificationService : NotificationService!
     
-    //MARK: ViewController lifecycle
+    // MARK: ViewController lifecycle
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -48,13 +48,13 @@ class OnboardingPageViewController: UIPageViewController, UIPageViewControllerDa
         self.onNew(page: self.pages[0])
     }
     
-    //MARK: Actions
+    // MARK: Actions
     @IBAction func pagerButtonTouchUpInside()
     {
         self.goToNextPage()
     }
     
-    //MARK: Methods
+    // MARK: Methods
     func inject(_ settingsService: SettingsService,
                 _ appStateService: AppStateService,
                 _ mainViewController: MainViewController,

@@ -3,7 +3,7 @@ import CoreLocation
 
 class SmartGuessModelAdapter : CoreDataModelAdapter<SmartGuess>
 {
-    //MARK: Fields
+    // MARK: Fields
     static let idKey = "id"
     
     private let lastUsedKey = "lastUsed"

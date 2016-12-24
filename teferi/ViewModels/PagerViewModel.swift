@@ -3,7 +3,7 @@ import Foundation
 
 class PagerViewModel
 {
-    //MARK: Fields
+    // MARK: Fields
     private let settingsService : SettingsService
     private let dateVariable = Variable(Date())
     
@@ -13,7 +13,7 @@ class PagerViewModel
         self.dateObservable = self.dateVariable.asObservable()
     }
     
-    //MARK: Properties
+    // MARK: Properties
     var date : Date
     {
         get { return self.dateVariable.value }

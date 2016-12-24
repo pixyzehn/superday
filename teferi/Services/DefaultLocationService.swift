@@ -7,7 +7,7 @@ import CoreMotion
 ///Default implementation for the location service.
 class DefaultLocationService : NSObject, CLLocationManagerDelegate, LocationService
 {
-    //MARK: Fields
+    // MARK: Fields
     private let loggingService : LoggingService
     
     ///The location manager itself
@@ -18,7 +18,7 @@ class DefaultLocationService : NSObject, CLLocationManagerDelegate, LocationServ
     // for logging date/time of received location updates
     private let dateTimeFormatter = DateFormatter()
     
-    //MARK: Initializers
+    // MARK: Initializers
     init(loggingService: LoggingService)
     {
         self.loggingService = loggingService
@@ -35,7 +35,7 @@ class DefaultLocationService : NSObject, CLLocationManagerDelegate, LocationServ
         self.loggingService.log(withLogLevel: .verbose, message: "DefaultLocationService Initialized")
     }
     
-    //MARK: LocationService implementation
+    // MARK: LocationService implementation
     
     lazy private(set) var locationObservable : Observable<CLLocation> =
     {
@@ -61,14 +61,14 @@ class DefaultLocationService : NSObject, CLLocationManagerDelegate, LocationServ
         return self.locationManager.location
     }
     
-    //MARK: CLLocationManagerDelegate Implementation
+    // MARK: CLLocationManagerDelegate Implementation
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
         //Notifies new locations to listeners
         locations.forEach { location in self.locationVariable.value = location }
     }
     
-    //MARK: Methods
+    // MARK: Methods
     private func filterLocations(_ location: CLLocation) -> Bool
     {
         //Location is valid

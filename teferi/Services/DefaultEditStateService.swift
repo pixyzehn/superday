@@ -2,18 +2,18 @@ import RxSwift
 
 class DefaultEditStateService : EditStateService
 {
-    //MARK: Fields
+    // MARK: Fields
     private let isEditingVariable = Variable(false)
     private let beganEditingVariable = Variable((CGPoint(), TimeSlot(withStartTime: Date(), categoryWasSetByUser: false)))
     
-    //MARK: Initializers
+    // MARK: Initializers
     init()
     {
         self.isEditingObservable = self.isEditingVariable.asObservable()
         self.beganEditingObservable = self.beganEditingVariable.asObservable()
     }
     
-    //MARK: EditStateService implementation
+    // MARK: EditStateService implementation
     let isEditingObservable : Observable<Bool>
     let beganEditingObservable : Observable<(CGPoint, TimeSlot)>
     

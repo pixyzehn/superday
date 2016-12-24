@@ -7,7 +7,7 @@ import UserNotifications
 @UIApplicationMain
 class AppDelegate : UIResponder, UIApplicationDelegate
 {   
-    //MARK: Fields
+    // MARK: Fields
     private var invalidateOnWakeup = false
     private let disposeBag = DisposeBag()
     private let notificationAuthorizationVariable = Variable(false)
@@ -24,7 +24,7 @@ class AppDelegate : UIResponder, UIApplicationDelegate
     private let notificationService : NotificationService
     private let feedbackService: FeedbackService
     
-    //MARK: Properties
+    // MARK: Properties
     var window: UIWindow?
     
     //Initializers
@@ -70,7 +70,7 @@ class AppDelegate : UIResponder, UIApplicationDelegate
                                    notificationService: self.notificationService)
     }
     
-    //MARK: UIApplicationDelegate lifecycle
+    // MARK: UIApplicationDelegate lifecycle
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
         let isInBackground = launchOptions?[UIApplicationLaunchOptionsKey.location] != nil

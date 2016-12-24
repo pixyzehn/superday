@@ -3,7 +3,7 @@ import Foundation
 
 class DefaultTimeSlotService : TimeSlotService
 {
-    //MARK: Fields
+    // MARK: Fields
     private let loggingService : LoggingService
     private let persistencyService : BasePersistencyService<TimeSlot>
     

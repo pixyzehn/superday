@@ -78,7 +78,7 @@ class MainViewModel
         return dayOfMonthFormatter.string(from: currentDate)
     }
     
-    //MARK: Methods
+    // MARK: Methods
     
     /**
      Adds and persists a new TimeSlot to this Timeline.

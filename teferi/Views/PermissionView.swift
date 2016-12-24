@@ -3,7 +3,7 @@ import RxSwift
 
 class PermissionView : UIView
 {
-    //MARK: Fields
+    // MARK: Fields
     private let titleKey = "LocationDisabledTitle"
     private let descriptionKey = "LocationDisabledDescription"
     private let titleFirstUseKey = "LocationDisabledTitleFirstUse"
@@ -38,7 +38,7 @@ class PermissionView : UIView
         self.blur.layer.addSublayer(layer)
     }
     
-    //MARK: Methods
+    // MARK: Methods
     @IBAction func enableLocation()
     {
         let url = URL(string: UIApplicationOpenSettingsURLString)!

@@ -2,12 +2,12 @@ import UIKit
 
 class EditTimeSlotView : UIView
 {
-    //MARK: Fields
+    // MARK: Fields
     private var editButtons : [UIImageView]? = nil
     private var onEditEnded : ((TimeSlot, Category) -> Void)!
     private var firstImageView : UIImageView? = nil
     
-    //MARK: Initializers
+    // MARK: Initializers
     init(editEndedCallback: @escaping (TimeSlot, Category) -> Void)
     {
         super.init(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
@@ -22,7 +22,7 @@ class EditTimeSlotView : UIView
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: Properties
+    // MARK: Properties
     var isEditing : Bool = false
     {
         didSet
@@ -59,7 +59,7 @@ class EditTimeSlotView : UIView
         }
     }
     
-    //MARK: Methods
+    // MARK: Methods
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool
     {
         return self.alpha > 0

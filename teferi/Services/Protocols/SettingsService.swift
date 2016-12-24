@@ -3,7 +3,7 @@ import CoreLocation
 
 protocol SettingsService
 {
-    //MARK: Properties
+    // MARK: Properties
     var installDate : Date? { get }
     
     var lastLocation : CLLocation? { get }
@@ -18,7 +18,7 @@ protocol SettingsService
     
     var lastInactiveDate : Date?  { get }
     
-    //MARK: Methods
+    // MARK: Methods
     
     func setInstallDate(_ date: Date)
     

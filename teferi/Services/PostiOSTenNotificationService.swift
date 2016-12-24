@@ -5,20 +5,20 @@ import UserNotifications
 @available(iOS 10.0, *)
 class PostiOSTenNotificationService : NotificationService
 {
-    //MARK: Fields
+    // MARK: Fields
     private let loggingService : LoggingService
     private let timeSlotService : TimeSlotService
     
     private var actionSubsribers = [(Category) -> ()]()
     
-    //MARK: Initializers
+    // MARK: Initializers
     init(loggingService: LoggingService, timeSlotService : TimeSlotService)
     {
         self.loggingService = loggingService
         self.timeSlotService = timeSlotService
     }
     
-    //MARK: NotificationService implementation
+    // MARK: NotificationService implementation
     func requestNotificationPermission(completed: @escaping () -> ())
     {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge],

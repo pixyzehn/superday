@@ -19,7 +19,7 @@ enum Category : String
     case leisure
     case unknown
     
-    //MARK: Properties
+    // MARK: Properties
     
     /// Get the color associated with the category.
     var color : UIColor

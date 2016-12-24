@@ -4,7 +4,7 @@ import RxSwift
 ///ViewModel for the TimelineViewController.
 class TimelineViewModel
 {
-    //MARK: Fields
+    // MARK: Fields
     private let isCurrentDay : Bool
     private let metricsService : MetricsService
     private let appStateService : AppStateService
@@ -13,7 +13,7 @@ class TimelineViewModel
     private let timeSlotUpdatingVariable = Variable(-1)
     private let timeSlotCreationVariable = Variable(-1)
     
-    //MARK: Properties
+    // MARK: Properties
     let date : Date
     let timeObservable : Observable<Int>
     let isEditingObservable : Observable<Bool>
@@ -39,7 +39,7 @@ class TimelineViewModel
         set(value) { self.isEditingVariable.value = value }
     }
     
-    //MARK: Initializers
+    // MARK: Initializers
     init(date: Date,
          metricsService : MetricsService,
          appStateService: AppStateService,
@@ -74,7 +74,7 @@ class TimelineViewModel
         }
     }
     
-    //MARK: Methods
+    // MARK: Methods
     
     ///Called when the persistency service indicates that a TimeSlot has been created/updated.
     private func onTimeSlotCreated(timeSlot: TimeSlot)

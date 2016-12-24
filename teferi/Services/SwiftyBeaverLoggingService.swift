@@ -3,10 +3,10 @@ import SwiftyBeaver
 /// Implementation of LoggingService that depends on the SwiftyBeaver library
 class SwiftyBeaverLoggingService : LoggingService
 {
-    //MARK: Fields
+    // MARK: Fields
     private let swiftBeaver = SwiftyBeaver.self
 
-    //MARK: Initializers
+    // MARK: Initializers
     init()
     {
         let file = FileDestination()
@@ -14,7 +14,7 @@ class SwiftyBeaverLoggingService : LoggingService
         self.swiftBeaver.addDestination(file)
     }
     
-    //MARK: LoggingService implementation
+    // MARK: LoggingService implementation
     func log(withLogLevel logLevel: LogLevel, message: String)
     {
         switch logLevel

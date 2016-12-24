@@ -3,7 +3,7 @@ import CoreData
 
 class TimeSlotModelAdapter : CoreDataModelAdapter<TimeSlot>
 {
-    //MARK: Fields
+    // MARK: Fields
     private let endTimeKey = "endTime"
     private let categoryKey = "category"
     private let startTimeKey = "startTime"

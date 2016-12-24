@@ -2,16 +2,16 @@ import RxSwift
 
 class DefaultAppStateService : AppStateService
 {
-    //MARK: Fields
+    // MARK: Fields
     private let appStateVariable = Variable(AppState.active)
 
-    //MARK: Initializers
+    // MARK: Initializers
     init()
     {
         self.appStateObservable = self.appStateVariable.asObservable()
     }
     
-    //MARK: Properties
+    // MARK: Properties
     let appStateObservable : Observable<AppState>
     
     var currentAppState : AppState
